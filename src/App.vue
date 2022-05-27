@@ -1,16 +1,34 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <h2>{{ 2 + 3 + 5 }}</h2>
+  <h2>{{ 5 + 10 + 15 }}</h2>
+  <h2>Add methods - {{ add(2,3,5) }}</h2>
+  <h2>Add methods - {{ add(10, 15, 20) }}</h2>
+  <!-- <h2>Multiply methods - {{ multiply(10) }}</h2> -->
+  <h2>Multiply methods - {{ multiply(baseValue) }}</h2>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'App',
-  components: {
-    HelloWorld
-  }
+  data(){
+    return{
+      baseMultiplier: 5,
+      baseValue: 2
+    }
+  },
+  methods:{ 
+    // add(){
+    //   return 2 + 3 + 5
+    // },
+    add(a, b, c){
+      return a + b + c
+    },
+    multiply(num)  { 
+      return num * this.baseMultiplier
+    },
+  },
+
 }
 </script>
 
